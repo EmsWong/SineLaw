@@ -58,7 +58,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	//Constructor
 	public graphics(){
-		thePanel.setPreferredSize(new Dimension(600,600));
+		thePanel.setPreferredSize(new Dimension(960,540));
 		thePanel.addMouseListener(this);
 		thePanel.addMouseMotionListener(this);
 		theFrame.addKeyListener(this);
