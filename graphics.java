@@ -7,8 +7,8 @@ import javax.swing.event.*;
 public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 	//Properties
 	JFrame theFrame = new JFrame("Sine Law");
-	JPanel thePanel = new Jpanel();
-	Timer theTimer = new Timer(1000/20.8, this);
+	JPanel thePanel = new JPanel();
+	Timer theTimer = new Timer(960/20, this);
 
 	//Methods
 	public void mouseMoved(MouseEvent e){
