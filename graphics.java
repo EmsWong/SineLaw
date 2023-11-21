@@ -20,23 +20,23 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	public void mouseExited(MouseEvent e){
         
-        }
+    }
 
-        public void mouseEntered(MouseEvent e){
+    public void mouseEntered(MouseEvent e){
         
-        }
+    }
 
-        public void mouseReleased(MouseEvent e){
+    public void mouseReleased(MouseEvent e){
 
-        }
+    }
 
-        public void mousePressed(MouseEvent e){
+    public void mousePressed(MouseEvent e){
 
-        }
+    }
 
-        public void mouseClicked(MouseEvent e){
+    public void mouseClicked(MouseEvent e){
         	
-        }       
+    }       
 
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == theTimer){
@@ -66,6 +66,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		theFrame.pack();
 		theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		theFrame.setVisible(true);
+		theFrame.setResizable(false);
 		theTimer.start();
 	}
 
