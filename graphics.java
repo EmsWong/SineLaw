@@ -9,6 +9,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JFrame theFrame = new JFrame("Sine Law");
 	JPanel thePanel = new JPanel();
 	Timer theTimer = new Timer(960/20, this);
+	JMenuBar theBar = new JMenuBar();
+	JMenu mainMenu = new JMenu("Menu");
 
 	//Methods
 	public void mouseMoved(MouseEvent e){
@@ -62,6 +64,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		thePanel.addMouseListener(this);
 		thePanel.addMouseMotionListener(this);
 		theFrame.addKeyListener(this);
+		theBar.add(mainMenu);
+		theFrame.setJMenuBar(theBar);
 		theFrame.setContentPane(thePanel);
 		theFrame.pack();
 		theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
