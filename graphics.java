@@ -2,6 +2,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import java.awt.image.*;
+import java.io.*;
 
 
 public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
@@ -12,6 +14,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JMenuBar theBar = new JMenuBar();
 	JMenu mainMenu = new JMenu("Menu");
 	JMenu options = new JMenu("Options");
+	BufferedImage equ = null;
 	JMenuItem help = new JMenuItem("Help");
 	JMenuItem about = new JMenuItem("About");
 	JMenuItem twoangle = new JMenuItem("Given 2 angles and a side");
