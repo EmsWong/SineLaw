@@ -11,9 +11,12 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	Timer theTimer = new Timer(960/20, this);
 	JMenuBar theBar = new JMenuBar();
 	JMenu mainMenu = new JMenu("Menu");
+	JMenu options = new JMenu("Options");
+	JMenuItem help = new JMenuItem("Help");
+	JMenuItem about = new JMenuItem("About");
 
 	//Methods
-	
+
 	public void mouseMoved(MouseEvent e){
 	}
 
@@ -23,23 +26,23 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	public void mouseExited(MouseEvent e){
         
-   	}
+    }
 
-   	public void mouseEntered(MouseEvent e){
+    public void mouseEntered(MouseEvent e){
         
-   	}
+    }
 
-    	public void mouseReleased(MouseEvent e){
+    public void mouseReleased(MouseEvent e){
 
-    	}
+    }
 
-    	public void mousePressed(MouseEvent e){
+    public void mousePressed(MouseEvent e){
 
-    	}
+    }
 
-    	public void mouseClicked(MouseEvent e){
+    public void mouseClicked(MouseEvent e){
         	
-    	}       
+    }       
 
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == theTimer){
@@ -64,9 +67,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		thePanel.setPreferredSize(new Dimension(960,540));
 		thePanel.addMouseListener(this);
 		thePanel.addMouseMotionListener(this);
+		
 		theFrame.addKeyListener(this);
-		theBar.add(mainMenu);
-		theFrame.setJMenuBar(theBar);
 		theFrame.setContentPane(thePanel);
 		theFrame.pack();
 		theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
