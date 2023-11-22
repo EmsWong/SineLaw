@@ -7,7 +7,7 @@ import javax.swing.event.*;
 public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 	//Properties
 	JFrame theFrame = new JFrame("Sine Law");
-	JPanel thePanel = new JPanel();
+	panel thePanel = new panel();
 	Timer theTimer = new Timer(960/20, this);
 	JMenuBar theBar = new JMenuBar();
 	JMenu mainMenu = new JMenu("Menu");
@@ -53,6 +53,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		}
 		if(e.getSource() == help){
 			System.out.println("help");
+		}
+		if(e.getSource() == about){
+
 		}
 	}
 
