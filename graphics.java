@@ -13,6 +13,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JMenu mainMenu = new JMenu("Menu");
 
 	//Methods
+	
 	public void mouseMoved(MouseEvent e){
 	}
 
@@ -22,23 +23,23 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	public void mouseExited(MouseEvent e){
         
-    }
+   	}
 
-    public void mouseEntered(MouseEvent e){
+   	public void mouseEntered(MouseEvent e){
         
-    }
+   	}
 
-    public void mouseReleased(MouseEvent e){
+    	public void mouseReleased(MouseEvent e){
 
-    }
+    	}
 
-    public void mousePressed(MouseEvent e){
+    	public void mousePressed(MouseEvent e){
 
-    }
+    	}
 
-    public void mouseClicked(MouseEvent e){
+    	public void mouseClicked(MouseEvent e){
         	
-    }       
+    	}       
 
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == theTimer){
