@@ -68,6 +68,13 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		thePanel.addMouseListener(this);
 		thePanel.addMouseMotionListener(this);
 		
+		theBar.add(mainMenu);
+		theBar.add(options);
+
+		mainMenu.add(help);
+		mainMenu.add(about);
+
+		theFrame.setJMenuBar(theBar);
 		theFrame.addKeyListener(this);
 		theFrame.setContentPane(thePanel);
 		theFrame.pack();
