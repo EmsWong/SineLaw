@@ -79,9 +79,13 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 		mainMenu.add(help);
 		mainMenu.add(about);
+		help.addActionListener(this);
+		about.addActionListener(this);
 
 		options.add(twoangle);
 		options.add(twoside);
+		twoangle.addActionListener(this);
+		twoside.addActionListener(this);
 
 		theFrame.setJMenuBar(theBar);
 		theFrame.addKeyListener(this);
