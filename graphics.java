@@ -14,10 +14,13 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JMenu options = new JMenu("Options");
 	JMenuItem help = new JMenuItem("Help");
 	JMenuItem about = new JMenuItem("About");
+	JMenuItem twoangle = new JMenuItem("Given 2 angles and a side");
+	JMenuItem twoside = new JMenuItem("Given 2 sides and an angle");
 
 	//Methods
 
 	public void mouseMoved(MouseEvent e){
+
 	}
 
 	public void mouseDragged(MouseEvent e){
@@ -48,6 +51,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		if(e.getSource() == theTimer){
 			thePanel.repaint();
 		}
+		if(e.getSource() == help){
+			System.out.println("help");
+		}
 	}
 
 	public void keyReleased(KeyEvent e){
@@ -73,6 +79,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 		mainMenu.add(help);
 		mainMenu.add(about);
+
+		options.add(twoangle);
+		options.add(twoside);
 
 		theFrame.setJMenuBar(theBar);
 		theFrame.addKeyListener(this);
