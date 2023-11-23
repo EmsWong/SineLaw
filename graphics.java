@@ -19,6 +19,10 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JMenuItem about = new JMenuItem("About");
 	JMenuItem twoangle = new JMenuItem("Given 2 angles and a side");
 	JMenuItem twoside = new JMenuItem("Given 2 sides and an angle");
+	JSlider val1 = new JSlider(JSlider.HORIZONTAL, 1, 180, 1);
+	JSlider val2 = new JSlider(JSlider.HORIZONTAL, 1, 180, 1);
+	JSlider val3 = new JSlider(JSlider.HORIZONTAL, 1, 180, 1);
+
 
 	//Methods
 
@@ -52,13 +56,20 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == theTimer){
+			int intval1;
+			int intval2;
+			int intval3;
+			intval1 = val1.getValue();
+			intval2 = val2.getValue();
+			intval3 = val3.getValue();
+			System.out.println(""+intval1+intval2+intval3);
 			thePanel.repaint();
 		}
 		if(e.getSource() == help){
 			System.out.println("help");
 		}
 		if(e.getSource() == about){
-
+			System.out.println("about");		
 		}
 	}
 
@@ -76,9 +87,25 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	//Constructor
 	public graphics(){
+		thePanel.setLayout(null);
 		thePanel.setPreferredSize(new Dimension(960,540));
 		thePanel.addMouseListener(this);
 		thePanel.addMouseMotionListener(this);
+
+		val1.setSize(345, 20);
+		val1.setLocation(570, 300);
+		val1.setVisible(true);
+		thePanel.add(val1);
+
+		val2.setSize(345, 20);
+		val2.setLocation(570, 365);
+		val2.setVisible(true);
+		thePanel.add(val2);
+
+		val3.setSize(345, 20);
+		val3.setLocation(570, 430);
+		val3.setVisible(true);
+		thePanel.add(val3);
 		
 		theBar.add(mainMenu);
 		theBar.add(options);
