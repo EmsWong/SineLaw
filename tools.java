@@ -41,7 +41,7 @@ public class tools {
         dblAngleA = Math.toRadians(dblAngleA);
         dblAngleB = Math.toRadians(dblAngleB);
         dblSideA = (dblSideB * Math.sin(dblAngleA))/Math.sin(dblAngleB);
-        dblSideA = Math.round(dblSideA);
+        dblSideA = Math.round(dblSideA*100)/100;
         return dblSideA;
     }
 
@@ -52,7 +52,7 @@ public class tools {
         double dblAngleB = intAngleB;
         dblAngleB = Math.toRadians(dblAngleB);
         dblAngleA = Math.asin((dblSideA * Math.sin(dblAngleB))/dblSideB);
-        dblAngleA = Math.round(dblAngleA);
+        dblAngleA = Math.round(dblAngleA*100)/100;
         return dblAngleA;
     }
 
