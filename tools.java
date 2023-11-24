@@ -7,7 +7,7 @@ public class tools {
         Font theFont = null;
         // Try to load the font from the jar file
         try{
-        theFont = Font.createFont(Font.TRUETYPE_FONT, new File("CabinSketch-Bold.ttf")); 
+        theFont = Font.createFont(Font.TRUETYPE_FONT, new File("Raleway-Bold.ttf")); 
         return theFont.deriveFont(Font.PLAIN, intSize);
         }catch(Exception e){
         //System.out.println(e.toString());
@@ -24,7 +24,7 @@ public class tools {
         
         // Then load the default font if all else fails
         try{
-        theFont = Font.createFont(Font.TRUETYPE_FONT, new File("CabinSketch-Bold.ttf")); 
+        theFont = Font.createFont(Font.TRUETYPE_FONT, new File("Raleway-Bold.ttf")); 
         return theFont.deriveFont(Font.PLAIN, 20);
         }catch(Exception e){
         //System.out.println(e.toString());
