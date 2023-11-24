@@ -82,7 +82,15 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			System.out.println("about");		
 		}
 		if(e.getSource() == calculate){
-			System.out.println("hi");		
+			int intval1;
+			int intval2;
+			int intval3;
+			double dblresult;
+			intval1 = val1.getValue();
+			intval2 = val2.getValue();
+			intval3 = val3.getValue();
+			dblresult = tools.sidecalc(intval1, intval2, intval3);
+			System.out.println(dblresult);
 		}
 	}
 
