@@ -33,5 +33,28 @@ public class tools {
         return theFont;
     }
 
+    public static double sidecalc(int intAngleA, int intAngleB, int intSideB){
+        double dblSideA;
+        double dblAngleA = intAngleA;
+        double dblAngleB = intAngleB;
+        double dblSideB = intSideB;
+        dblAngleA = Math.toRadians(dblAngleA);
+        dblAngleB = Math.toRadians(dblAngleB);
+        dblSideA = (dblSideB * Math.sin(dblAngleA))/Math.sin(dblAngleB);
+        dblSideA = Math.round(dblSideA);
+        return dblSideA;
+    }
+
+    public static double anglecalc(int intSideA, int intSideB, int intAngleB){
+        double dblAngleA;
+        double dblSideA = intSideA;
+        double dblSideB = intSideB;
+        double dblAngleB = intAngleB;
+        dblAngleB = Math.toRadians(dblAngleB);
+        dblAngleA = Math.asin((dblSideA * Math.sin(dblAngleB))/dblSideB);
+        dblAngleA = Math.round(dblAngleA);
+        return dblAngleA;
+    }
+
     
 }
