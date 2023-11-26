@@ -94,7 +94,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			intval3 = val3.getValue();
 			dblresult = tools.sidecalc(intval1, intval2, intval3);
 			System.out.println(dblresult);
-			outputAngle.setText("Angle A is: "+dblresult);
+			outputSide.setText("Side A is: "+dblresult);
 		}
 	}
 
@@ -159,10 +159,10 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		enter.setLocation(670, 240);
 		thePanel.add(enter);
 
-		outputAngle.setFont (text);
-		outputAngle.setSize(200, 40);
-		outputAngle.setLocation(750, 475);
-		thePanel.add(outputAngle);
+		outputSide.setFont (text);
+		outputSide.setSize(200, 40);
+		outputSide.setLocation(750, 475);
+		thePanel.add(outputSide);
 		
 		theBar.add(mainMenu);
 		theBar.add(options);

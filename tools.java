@@ -34,15 +34,19 @@ public class tools {
     }
 
     public static double sidecalc(int intAngleA, int intAngleB, int intSideB){
-        double dblSideA;
-        double dblAngleA = intAngleA;
-        double dblAngleB = intAngleB;
-        double dblSideB = intSideB;
-        dblAngleA = Math.toRadians(dblAngleA);
-        dblAngleB = Math.toRadians(dblAngleB);
-        dblSideA = (dblSideB * Math.sin(dblAngleA))/Math.sin(dblAngleB);
-        dblSideA = Math.round(dblSideA*100.0)/100.0;
-        return dblSideA;
+        if((intAngleA+intAngleB) >= 180){
+            return 0;
+        }else{
+            double dblSideA;
+            double dblAngleA = intAngleA;
+            double dblAngleB = intAngleB;
+            double dblSideB = intSideB;
+            dblAngleA = Math.toRadians(dblAngleA);
+            dblAngleB = Math.toRadians(dblAngleB);
+            dblSideA = (dblSideB * Math.sin(dblAngleA))/Math.sin(dblAngleB);
+            dblSideA = Math.round(dblSideA*100.0)/100.0;
+            return dblSideA;
+        }
     }
 
     public static double anglecalc(int intSideA, int intSideB, int intAngleB){
@@ -53,7 +57,11 @@ public class tools {
         dblAngleB = Math.toRadians(dblAngleB);
         dblAngleA = Math.asin((dblSideA * Math.sin(dblAngleB))/dblSideB);
         dblAngleA = Math.round(dblAngleA*100.0)/100.0;
-        return dblAngleA;
+        if((dblAngleA+dblAngleB)>= 180){
+            return 0;
+        }else{
+            return dblAngleA;
+        }
     }
 
     
