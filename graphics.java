@@ -26,6 +26,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JLabel angleB = new JLabel ("Angle B: ");
 	JLabel sideA = new JLabel ("Side A");
 	JLabel sideB = new JLabel ("Side B: ");
+	JLabel enter = new JLabel ("Enter 3 Values:");
+	JLabel outputAngle = new JLabel ("Angle A is: ");
+	JLabel outputSide = new JLabel ("Side A is: ");
 	private TextArea theArea;
 	Font text = tools.loadFont("Raleway-Bold.ttf", 20);
 	JButton calculate = new JButton("Calculate");
@@ -33,7 +36,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	//Methods
 	public void setTextFont(Font theFont){
 		this.theArea.setFont(theFont); 
-	  }
+	}
 	public void mouseMoved(MouseEvent e){
 
 	}
@@ -91,6 +94,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			intval3 = val3.getValue();
 			dblresult = tools.sidecalc(intval1, intval2, intval3);
 			System.out.println(dblresult);
+			outputAngle.setText("Angle A is: "+dblresult);
 		}
 	}
 
@@ -149,6 +153,16 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		calculate.setBackground(Color.GREEN);
 		calculate.addActionListener(this);
 		thePanel.add(calculate);
+
+		enter.setFont(text);
+		enter.setSize(200, 40);
+		enter.setLocation(670, 240);
+		thePanel.add(enter);
+
+		outputAngle.setFont (text);
+		outputAngle.setSize(200, 40);
+		outputAngle.setLocation(670, 475);
+		thePanel.add(outputAngle);
 		
 		theBar.add(mainMenu);
 		theBar.add(options);
