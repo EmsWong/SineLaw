@@ -149,7 +149,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 		calculate.setFont(text);
 		calculate.setSize(150, 40);
-		calculate.setLocation(435, 475);
+		calculate.setLocation(570, 475);
 		calculate.setBackground(Color.GREEN);
 		calculate.addActionListener(this);
 		thePanel.add(calculate);
@@ -161,7 +161,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 		outputAngle.setFont (text);
 		outputAngle.setSize(200, 40);
-		outputAngle.setLocation(670, 475);
+		outputAngle.setLocation(750, 475);
 		thePanel.add(outputAngle);
 		
 		theBar.add(mainMenu);
