@@ -79,6 +79,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			angleA.setText("Angle A:  "+intval1);
 			angleB.setText("Angle B:  "+intval2);
 			sideB.setText("Side B:   "+intval3);
+			sidePanel.x2 = sidePanel.x1 + intval3;
 			sidePanel.repaint();
 		}
 		if(e.getSource() == help){
