@@ -9,7 +9,10 @@ import java.io.*;
 public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
 	//Properties
 	JFrame theFrame = new JFrame("Sine Law");
-	panel thePanel = new panel();
+	panel thehelp = new panel();
+	panel theabout = new panel();
+	panel anglePanel = new panel();
+	panel sidePanel = new panel();
 	Timer theTimer = new Timer(1000/48, this);
 	JMenuBar theBar = new JMenuBar();
 	JMenu mainMenu = new JMenu("Menu");
