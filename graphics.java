@@ -79,7 +79,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			angleA.setText("Angle A:  "+intval1);
 			angleB.setText("Angle B:  "+intval2);
 			sideB.setText("Side B:   "+intval3);
-			thePanel.repaint();
+			sidePanel.repaint();
 		}
 		if(e.getSource() == help){
 			System.out.println("help");
@@ -115,10 +115,10 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 	//Constructor
 	public graphics(){
-		thePanel.setLayout(null);
-		thePanel.setPreferredSize(new Dimension(960,540));
-		thePanel.addMouseListener(this);
-		thePanel.addMouseMotionListener(this);
+		sidePanel.setLayout(null);
+		sidePanel.setPreferredSize(new Dimension(960,540));
+		sidePanel.addMouseListener(this);
+		sidePanel.addMouseMotionListener(this);
 
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
@@ -127,8 +127,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		angleA.setLocation(435, 295);
 		angleA.setVisible(true);
 		angleA.setFont(text);
-		thePanel.add(val1);
-		thePanel.add(angleA);
+		sidePanel.add(val1);
+		sidePanel.add(angleA);
 
 		val2.setSize(345, 20);
 		val2.setLocation(570, 365);
@@ -137,8 +137,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		angleB.setLocation(435, 360);
 		angleB.setVisible(true);
 		angleB.setFont(text);
-		thePanel.add(val2);
-		thePanel.add(angleB);
+		sidePanel.add(val2);
+		sidePanel.add(angleB);
 
 		val3.setSize(345, 20);
 		val3.setLocation(570, 430);
@@ -147,25 +147,25 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		sideB.setLocation(435, 425);
 		sideB.setVisible(true);
 		sideB.setFont(text);
-		thePanel.add(val3);
-		thePanel.add(sideB);
+		sidePanel.add(val3);
+		sidePanel.add(sideB);
 
 		calculate.setFont(text);
 		calculate.setSize(150, 40);
 		calculate.setLocation(570, 475);
 		calculate.setBackground(Color.GREEN);
 		calculate.addActionListener(this);
-		thePanel.add(calculate);
+		sidePanel.add(calculate);
 
 		enter.setFont(text);
 		enter.setSize(200, 40);
 		enter.setLocation(670, 240);
-		thePanel.add(enter);
+		sidePanel.add(enter);
 
 		outputSide.setFont (text);
 		outputSide.setSize(200, 40);
 		outputSide.setLocation(750, 475);
-		thePanel.add(outputSide);
+		sidePanel.add(outputSide);
 		
 		theBar.add(mainMenu);
 		theBar.add(options);
@@ -182,7 +182,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 		theFrame.setJMenuBar(theBar);
 		theFrame.addKeyListener(this);
-		theFrame.setContentPane(thePanel);
+		theFrame.setContentPane(sidePanel);
 		theFrame.pack();
 		theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		theFrame.setVisible(true);
