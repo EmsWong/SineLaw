@@ -87,6 +87,12 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		if(e.getSource() == about){
 			System.out.println("about");		
 		}
+		if(e.getSource() == twoside){
+			System.out.println("given two sides and angle");
+		}
+		if(e.getSource() == twoangle){
+			System.out.println("given two angle and side");
+		}
 		if(e.getSource() == calculate){
 			int intval1;
 			int intval2;
