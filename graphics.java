@@ -139,6 +139,11 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		sidePanel.addMouseListener(this);
 		sidePanel.addMouseMotionListener(this);
 
+		anglePanel.setLayout(null);
+		anglePanel.setPreferredSize(new Dimension(960, 540));
+		anglePanel.addMouseListener(this);
+		sidePanel.addMouseMotionListener(this);
+
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
 		val1.setVisible(true);
@@ -185,6 +190,11 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		outputSide.setSize(200, 40);
 		outputSide.setLocation(750, 475);
 		sidePanel.add(outputSide);
+
+		outputAngle.setFont(text);
+		outputAngle.setSize(200, 40);
+		outputAngle.setLocation(750, 475);
+		anglePanel.add(outputAngle);
 		
 		theBar.add(mainMenu);
 		theBar.add(options);
