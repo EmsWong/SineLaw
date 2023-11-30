@@ -142,53 +142,57 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		anglePanel.setLayout(null);
 		anglePanel.setPreferredSize(new Dimension(960, 540));
 		anglePanel.addMouseListener(this);
-		sidePanel.addMouseMotionListener(this);
+		anglePanel.addMouseMotionListener(this);
 
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
 		val1.setVisible(true);
+		
 		angleA.setSize(125,30);
 		angleA.setLocation(435, 295);
 		angleA.setVisible(true);
 		angleA.setFont(text);
-		sidePanel.add(val1);
-		sidePanel.add(angleA);
-
+		
 		val2.setSize(345, 20);
 		val2.setLocation(570, 365);
 		val2.setVisible(true);
+
 		angleB.setSize(125,30);
 		angleB.setLocation(435, 360);
 		angleB.setVisible(true);
 		angleB.setFont(text);
-		sidePanel.add(val2);
-		sidePanel.add(angleB);
 
 		val3.setSize(345, 20);
 		val3.setLocation(570, 430);
 		val3.setVisible(true);
+
 		sideB.setSize(125,30);
 		sideB.setLocation(435, 425);
 		sideB.setVisible(true);
 		sideB.setFont(text);
-		sidePanel.add(val3);
-		sidePanel.add(sideB);
 
 		calculate.setFont(text);
 		calculate.setSize(150, 40);
 		calculate.setLocation(570, 475);
 		calculate.setBackground(Color.GREEN);
 		calculate.addActionListener(this);
-		sidePanel.add(calculate);
 
 		enter.setFont(text);
 		enter.setSize(200, 40);
 		enter.setLocation(670, 240);
-		sidePanel.add(enter);
 
 		outputSide.setFont (text);
 		outputSide.setSize(200, 40);
 		outputSide.setLocation(750, 475);
+
+		sidePanel.add(val1);
+		sidePanel.add(angleA);
+		sidePanel.add(val2);
+		sidePanel.add(angleB);
+		sidePanel.add(val3);
+		sidePanel.add(sideB);
+		sidePanel.add(calculate);
+		sidePanel.add(enter);
 		sidePanel.add(outputSide);
 
 		outputAngle.setFont(text);
