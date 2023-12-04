@@ -70,30 +70,30 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	
 	public void stateChanged(ChangeEvent e){
 		if (e.getSource() == val1){
-			int intval1;
-			intval1 = val1.getValue();
-			angleA.setText("Angle A:  "+intval1);
-			double dblval1 = Math.toRadians(intval1);
-			if(intval1 <= 90){
-				sidePanel.bx = 237 - (int)Math.round(25*Math.sin(dblval1));
-				System.out.println(237 + Math.round(25*Math.sin(dblval1)));
-			}else if(intval1 > 90){
-				sidePanel.bx = 187 + (int)Math.round(25*Math.sin(dblval1));
-				System.out.println(237 + Math.round(25*Math.sin(dblval1)));
+			int intA;
+			intA = val1.getValue();
+			angleA.setText("Angle A:  "+intA);
+			double dblA = Math.toRadians(intA);
+			if(intA <= 90){
+				sidePanel.bx = 237 - (int)Math.round(25*Math.sin(dblA));
+				System.out.println(237 + Math.round(25*Math.sin(dblA)));
+			}else if(intA > 90){
+				sidePanel.bx = 187 + (int)Math.round(25*Math.sin(dblA));
+				System.out.println(237 + Math.round(25*Math.sin(dblA)));
 			}
 			sidePanel.repaint();
 		}
 		if(e.getSource() == val3){
-			int intval3;
-			intval3 = val3.getValue();
-			sideB.setText("Side B:   "+intval3);
-			sidePanel.cx = sidePanel.ax + intval3;
+			int intb;
+			intb = val3.getValue();
+			sideB.setText("Side B:   "+intb);
+			sidePanel.cx = sidePanel.ax + intb;
 			sidePanel.repaint();
 		}
 		if(e.getSource() == val2){
-			int intval2;
-			intval2 = val2.getValue();
-			angleB.setText("Angle B:  "+intval2);
+			int intB;
+			intB = val2.getValue();
+			angleB.setText("Angle B:  "+intB);
 			sidePanel.repaint();
 		}
 	}
