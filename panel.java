@@ -7,8 +7,10 @@ import java.io.*;
 public class panel extends JPanel{
     //Properties
     BufferedImage imgEqu = null;
-	int x1 = 212;
-	int x2 = 237;
+	int ax = 212;
+	int cx = 237;
+	int bx = 223;
+	int by = 422;
 
     public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE);
@@ -17,7 +19,8 @@ public class panel extends JPanel{
 		g.setColor(Color.BLACK);
 		Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(5));
-        g2.drawLine(x1, 445, x2, 445);
+        g2.drawLine(ax, 445, cx, 445);
+		g2.drawLine(ax, 445, bx, by);
 		g2.setStroke(new BasicStroke(1));
 	}
 

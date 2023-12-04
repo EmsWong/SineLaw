@@ -6,7 +6,7 @@ import java.awt.image.*;
 import java.io.*;
 
 
-public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener{
+public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener, ChangeListener{
 	//Properties
 	JFrame theFrame = new JFrame("Sine Law");
 	panel thehelp = new panel();
@@ -66,21 +66,41 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
     public void mouseClicked(MouseEvent e){
         	
-    }       
+    }      
+	
+	public void stateChanged(ChangeEvent e){
+		if (e.getSource() == val1){
+			int intval1;
+			intval1 = val1.getValue();
+			angleA.setText("Angle A:  "+intval1);
+			double dblval1 = Math.toRadians(intval1);
+			if(intval1 <= 90){
+				sidePanel.bx = 237 - (int)Math.round(25*Math.sin(dblval1));
+				System.out.println(237 + Math.round(25*Math.sin(dblval1)));
+			}else if(intval1 > 90){
+				sidePanel.bx = 187 + (int)Math.round(25*Math.sin(dblval1));
+				System.out.println(237 + Math.round(25*Math.sin(dblval1)));
+			}
+			sidePanel.repaint();
+		}
+		if(e.getSource() == val3){
+			int intval3;
+			intval3 = val3.getValue();
+			sideB.setText("Side B:   "+intval3);
+			sidePanel.cx = sidePanel.ax + intval3;
+			sidePanel.repaint();
+		}
+		if(e.getSource() == val2){
+			int intval2;
+			intval2 = val2.getValue();
+			angleB.setText("Angle B:  "+intval2);
+			sidePanel.repaint();
+		}
+	}
 
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == theTimer){
-			int intval1;
-			int intval2;
-			int intval3;
-			intval1 = val1.getValue();
-			intval2 = val2.getValue();
-			intval3 = val3.getValue();
-			angleA.setText("Angle A:  "+intval1);
-			angleB.setText("Angle B:  "+intval2);
-			sideB.setText("Side B:   "+intval3);
-			sidePanel.x2 = sidePanel.x1 + intval3;
-			sidePanel.repaint();
+		
 		}
 		if(e.getSource() == help){
 			System.out.println("help");
@@ -115,8 +135,12 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			intval2 = val2.getValue();
 			intval3 = val3.getValue();
 			dblresult = tools.sidecalc(intval1, intval2, intval3);
+			if(dblresult == 0.0){
+				outputSide.setText("Not a triangle");
+			}else{
+				outputSide.setText("Side A is: "+dblresult);
+			}
 			System.out.println(dblresult);
-			outputSide.setText("Side A is: "+dblresult);
 		}
 	}
 
@@ -147,7 +171,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
 		val1.setVisible(true);
+		val1.addChangeListener(this);
 		
+		angleA.setText("Angle A:  "+25);
 		angleA.setSize(125,30);
 		angleA.setLocation(435, 295);
 		angleA.setVisible(true);
@@ -156,7 +182,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		val2.setSize(345, 20);
 		val2.setLocation(570, 365);
 		val2.setVisible(true);
+		val2.addChangeListener(this);
 
+		angleB.setText("Angle A:  "+25);
 		angleB.setSize(125,30);
 		angleB.setLocation(435, 360);
 		angleB.setVisible(true);
@@ -165,7 +193,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		val3.setSize(345, 20);
 		val3.setLocation(570, 430);
 		val3.setVisible(true);
+		val3.addChangeListener(this);
 
+		sideB.setText("Angle A:  "+25);
 		sideB.setSize(125,30);
 		sideB.setLocation(435, 425);
 		sideB.setVisible(true);
