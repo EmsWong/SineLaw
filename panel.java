@@ -29,10 +29,21 @@ public class panel extends JPanel{
 
     //Constructor
 	public panel(){
-		try{
-			imgEqu = ImageIO.read(new File("formula image.png"));
-		}catch(IOException e){
-			System.out.println("Unable to load image");
-		}
+		InputStream imageClass = null;
+		imageClass = this.getClass().getResourceAsStream("formula image.png");
+		if(imageClass == null){
+            System.out.println("Unable to load image file");
+        }else{
+            try{
+                ImageIO.read(imageClass);
+            }catch (IOException e){
+                System.out.println("Unable to load image file");
+            }
+        }
+        try{
+            imgEqu = ImageIO.read(new File("formula image.png"));
+        }catch(IOException e){
+            System.out.println("Could not open image");
+        }
     }
 }
