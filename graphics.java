@@ -25,16 +25,23 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JSlider val1 = new JSlider(0, 1, 180, 25);
 	JSlider val2 = new JSlider(0, 1, 180, 25);
 	JSlider val3 = new JSlider(0, 1, 180, 25);
+	JSlider value1 = new JSlider(0, 1, 180, 25);
+	JSlider value2 = new JSlider(0, 1, 180, 25);
+	JSlider value3 = new JSlider(0, 1, 180, 25);
 	JLabel angleA = new JLabel ("Angle A: ");
 	JLabel angleB = new JLabel ("Angle B: ");
-	JLabel sideA = new JLabel ("Side A");
 	JLabel sideB = new JLabel ("Side B: ");
+	JLabel sideAA = new JLabel ("Side A: ");
+	JLabel sideBB = new JLabel ("Side B: ");
+	JLabel angleBB = new JLabel("Angle B: ");
 	JLabel enter = new JLabel ("Enter 3 Values:");
+	JLabel enters = new JLabel ("Enter 3 Values:");
 	JLabel outputAngle = new JLabel ("Angle A is: ");
 	JLabel outputSide = new JLabel ("Side A is: ");
 	private TextArea theArea;
 	Font text = tools.loadFont("Raleway-Bold.ttf", 20);
 	JButton calculate = new JButton("Calculate");
+	JButton calculates = new JButton("Calculate");
 	
 	//Methods
 	public void setTextFont(Font theFont){
@@ -255,9 +262,61 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		sidePanel.add(enter);
 		sidePanel.add(outputSide);
 
+		value1.setSize(350, 20);
+		value1.setLocation(570, 300);
+		value1.setVisible(true);
+		value1.addChangeListener(this);
+
+		sideAA.setText("Side A:  "+25);
+		sideAA.setSize(125,30);
+		sideAA.setLocation(435, 295);
+		sideAA.setVisible(true);
+		sideAA.setFont(text);
+
+		value2.setSize(345, 20);
+		value2.setLocation(570, 365);
+		value2.setVisible(true);
+		value2.addChangeListener(this);
+
+		sideBB.setText("Side B:  "+25);
+		sideBB.setSize(125,30);
+		sideBB.setLocation(435, 360);
+		sideBB.setVisible(true);
+		sideBB.setFont(text);
+
+		value3.setSize(345, 20);
+		value3.setLocation(570, 430);
+		value3.setVisible(true);
+		value3.addChangeListener(this);
+
+		angleBB.setText("Angle B:  "+25);
+		angleBB.setSize(125,30);
+		angleBB.setLocation(435, 425);
+		angleBB.setVisible(true);
+		angleBB.setFont(text);
+
+		calculates.setFont(text);
+		calculates.setSize(150, 40);
+		calculates.setLocation(570, 475);
+		calculates.setBackground(Color.GREEN);
+		calculates.addActionListener(this);
+
+		enters.setFont(text);
+		enters.setSize(200, 40);
+		enters.setLocation(670, 240);
+
 		outputAngle.setFont(text);
 		outputAngle.setSize(200, 40);
 		outputAngle.setLocation(750, 475);
+		
+		anglePanel.add(value1);
+		anglePanel.add(sideAA);
+		anglePanel.add(value2);
+		anglePanel.add(sideBB);
+		anglePanel.add(value3);
+		anglePanel.add(angleBB);
+		anglePanel.add(calculates);
+		anglePanel.add(enters);
 		anglePanel.add(outputAngle);
 		
 		theBar.add(mainMenu);
