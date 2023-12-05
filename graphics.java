@@ -109,7 +109,23 @@ public class graphics implements ActionListener, ChangeListener{
 			sidePanel.repaint();
 		}
 		if(e.getSource() == value1){
-
+			int inta;
+			inta = value1.getValue();
+			sideAA.setText("Side A:  "+inta);
+			anglePanel.repaint();
+		}
+		if(e.getSource() == value2){
+			int intb;
+			intb = value2.getValue();
+			sideBB.setText("Side B:  "+intb);
+			anglePanel.cx = anglePanel.ax + intb;
+			anglePanel.repaint();
+		}
+		if(e.getSource() == value3){
+			int intB;
+			intB = value3.getValue();
+			angleBB.setText("Angle B:  "+intB);
+			anglePanel.repaint();
 		}
 		
 	}

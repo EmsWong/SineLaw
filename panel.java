@@ -7,12 +7,12 @@ import java.io.*;
 public class panel extends JPanel{
     //Properties
     BufferedImage imgEqu = null;
-	int ax = 212;
-	int ay = 445;
-	int cx = 237;
-	int cy = 445;
-	int bx = 252;
-	int by = 425;
+	int ax = 180;
+	int ay = 470;
+	int cx = 155;
+	int cy = 470;
+	int bx = 205;
+	int by = 450;
 
     public void paintComponent(Graphics g){
 		g.setColor(Color.WHITE);
