@@ -170,11 +170,9 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 
 		thehelp.setLayout(null);
 		thehelp.setPreferredSize(new Dimension(960, 540));
-		thehelp.addMouseListener(this);
 
 		theabout.setLayout(null);
 		theabout.setPreferredSize(new Dimension(960, 540));
-		theabout.addMouseListener(this);
 
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
