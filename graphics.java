@@ -70,6 +70,7 @@ public class graphics implements ActionListener, ChangeListener{
 			angleA.setText("Angle A:  "+intA);
 			double dblA = Math.toRadians(intA);
 			int intc;
+			// using a method in tools to find the length of c
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
 			if(intc < 0){
 					sidePanel.repaint();
