@@ -52,6 +52,7 @@ public class tools {
         double dblAngleB = intAngleB;
         dblAngleB = Math.toRadians(dblAngleB);
         dblAngleA = Math.asin((dblSideA * Math.sin(dblAngleB))/dblSideB);
+        dblAngleA = Math.toDegrees(dblAngleA);
         dblAngleA = Math.round(dblAngleA*100.0)/100.0;
         if((dblAngleA+dblAngleB)>= 180){
             return 0;

@@ -108,6 +108,9 @@ public class graphics implements ActionListener, ChangeListener{
 			angleB.setText("Angle B:  "+intB);
 			sidePanel.repaint();
 		}
+		if(e.getSource() == value1){
+
+		}
 		
 	}
 
@@ -152,6 +155,22 @@ public class graphics implements ActionListener, ChangeListener{
 				outputSide.setText("Not a triangle");
 			}else{
 				outputSide.setText("Side A is: "+dblresult);
+			}
+			System.out.println(dblresult);
+		}
+		if(e.getSource() == calculates){
+			int intvalue1;
+			int intvalue2;
+			int intvalue3;
+			double dblresult;
+			intvalue1 = value1.getValue();
+			intvalue2 = value2.getValue();
+			intvalue3 = value3.getValue();
+			dblresult = tools.anglecalc(intvalue1, intvalue2, intvalue3);
+			if(dblresult == 0.0){
+				outputAngle.setText("Not a triangle");
+			}else{
+				outputAngle.setText("Angle A is: "+dblresult);
 			}
 			System.out.println(dblresult);
 		}
