@@ -9,8 +9,8 @@ import java.io.*;
 public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener, ChangeListener{
 	//Properties
 	JFrame theFrame = new JFrame("Sine Law");
-	panel thehelp = new panel();
-	panel theabout = new panel();
+	newpanel1 thehelp = new newpanel1();
+	newpanel2 theabout = new newpanel2();
 	panel anglePanel = new panel();
 	panel sidePanel = new panel();
 	Timer theTimer = new Timer(1000/48, this);
@@ -167,6 +167,10 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		anglePanel.setPreferredSize(new Dimension(960, 540));
 		anglePanel.addMouseListener(this);
 		anglePanel.addMouseMotionListener(this);
+
+		thehelp.setLayout(null);
+		thehelp.setPreferredSize(new Dimension(960, 540));
+		thehelp.addMouseListener(this);
 
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
