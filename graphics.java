@@ -98,11 +98,25 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			sidePanel.repaint();
 		}
 		if(e.getSource() == val2){
+			int intA;
+			intA = val1.getValue();
 			int intB;
 			intB = val2.getValue();
+			int intC;
+			intC = 180 - intA - intB;
+			int intb;
+			intb = val3.getValue();
 			angleB.setText("Angle B:  "+intB);
 			double dblB = Math.toRadians(intB);
-			sidePanel.repaint();
+			int inta;
+			inta = (int)Math.round(tools.sidecalc(intA, intB, intb));
+			if(inta < 0){
+					sidePanel.repaint();
+			}else{
+				sidePanel.cx = sidePanel.bx + (int)Math.round(inta*Math.cos(dblB));
+				sidePanel.cy = sidePanel.by - (int)Math.round(inta*Math.sin(dblB));
+				sidePanel.repaint();
+			}
 		}
 	}
 
