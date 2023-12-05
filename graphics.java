@@ -72,16 +72,24 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		if (e.getSource() == val1){
 			int intA;
 			intA = val1.getValue();
+			int intB;
+			intB = val2.getValue();
+			int intC;
+			intC = 180 - intA - intB;
+			int intb;
+			intb = val3.getValue();
 			angleA.setText("Angle A:  "+intA);
 			double dblA = Math.toRadians(intA);
-			if(intA <= 90){
-				sidePanel.bx = 237 - (int)Math.round(25*Math.sin(dblA));
-				System.out.println(237 + Math.round(25*Math.sin(dblA)));
-			}else if(intA > 90){
-				sidePanel.bx = 187 + (int)Math.round(25*Math.sin(dblA));
-				System.out.println(237 + Math.round(25*Math.sin(dblA)));
+			int intc;
+			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
+			System.out.println(intc);
+			if(intc < 0){
+					sidePanel.repaint();
+			}else{
+				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
+				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
+				sidePanel.repaint();
 			}
-			sidePanel.repaint();
 		}
 		if(e.getSource() == val3){
 			int intb;
@@ -94,6 +102,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 			int intB;
 			intB = val2.getValue();
 			angleB.setText("Angle B:  "+intB);
+			double dblB = Math.toRadians(intB);
 			sidePanel.repaint();
 		}
 	}
@@ -190,7 +199,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		val2.setVisible(true);
 		val2.addChangeListener(this);
 
-		angleB.setText("Angle A:  "+25);
+		angleB.setText("Angle B:  "+25);
 		angleB.setSize(125,30);
 		angleB.setLocation(435, 360);
 		angleB.setVisible(true);
@@ -201,7 +210,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		val3.setVisible(true);
 		val3.addChangeListener(this);
 
-		sideB.setText("Angle A:  "+25);
+		sideB.setText("Side B:  "+25);
 		sideB.setSize(125,30);
 		sideB.setLocation(435, 425);
 		sideB.setVisible(true);
