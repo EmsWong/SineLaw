@@ -6,7 +6,7 @@ import java.awt.image.*;
 import java.io.*;
 
 
-public class graphics implements ActionListener, KeyListener, MouseListener, MouseMotionListener, ChangeListener{
+public class graphics implements ActionListener, ChangeListener{
 	//Properties
 	JFrame theFrame = new JFrame("Sine Law");
 	newpanel1 thehelp = new newpanel1();
@@ -22,58 +22,40 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 	JMenuItem about = new JMenuItem("About");
 	JMenuItem twoangle = new JMenuItem("Given 2 angles and a side");
 	JMenuItem twoside = new JMenuItem("Given 2 sides and an angle");
+	private TextArea theArea;
+	Font text = tools.loadFont("Raleway-Bold.ttf", 20);
+
+	// sliders for angle angle side
 	JSlider val1 = new JSlider(0, 1, 180, 25);
 	JSlider val2 = new JSlider(0, 1, 180, 25);
 	JSlider val3 = new JSlider(0, 1, 180, 25);
+
+	// sliders for side side angle
 	JSlider value1 = new JSlider(0, 1, 180, 25);
 	JSlider value2 = new JSlider(0, 1, 180, 25);
 	JSlider value3 = new JSlider(0, 1, 180, 25);
+
+	// labels and buttons for angle angle side
 	JLabel angleA = new JLabel ("Angle A: ");
 	JLabel angleB = new JLabel ("Angle B: ");
 	JLabel sideB = new JLabel ("Side B: ");
+	JLabel enter = new JLabel ("Enter 3 Values:");
+	JLabel outputSide = new JLabel ("Side A is: ");
+	JButton calculate = new JButton("Calculate");
+
+	// labels and buttons for side side angle
 	JLabel sideAA = new JLabel ("Side A: ");
 	JLabel sideBB = new JLabel ("Side B: ");
 	JLabel angleBB = new JLabel("Angle B: ");
-	JLabel enter = new JLabel ("Enter 3 Values:");
 	JLabel enters = new JLabel ("Enter 3 Values:");
 	JLabel outputAngle = new JLabel ("Angle A is: ");
-	JLabel outputSide = new JLabel ("Side A is: ");
-	private TextArea theArea;
-	Font text = tools.loadFont("Raleway-Bold.ttf", 20);
-	JButton calculate = new JButton("Calculate");
 	JButton calculates = new JButton("Calculate");
 	
 	//Methods
 	public void setTextFont(Font theFont){
 		this.theArea.setFont(theFont); 
 	}
-	public void mouseMoved(MouseEvent e){
-
-	}
-
-	public void mouseDragged(MouseEvent e){
-
-	}
-
-	public void mouseExited(MouseEvent e){
-        
-    }
-
-    public void mouseEntered(MouseEvent e){
-        
-    }
-
-    public void mouseReleased(MouseEvent e){
-
-    }
-
-    public void mousePressed(MouseEvent e){
-
-    }
-
-    public void mouseClicked(MouseEvent e){
-        	
-    }      
+	
 	
 	public void stateChanged(ChangeEvent e){
 		if (e.getSource() == val1){
@@ -175,29 +157,16 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		}
 	}
 
-	public void keyReleased(KeyEvent e){
-		
-	}
-
-	public void keyPressed(KeyEvent e){
-		
-	}
-
-	public void keyTyped(KeyEvent e){
-
-	}
 
 	//Constructor
 	public graphics(){
+
+		// Menu constructors
 		sidePanel.setLayout(null);
 		sidePanel.setPreferredSize(new Dimension(960,540));
-		sidePanel.addMouseListener(this);
-		sidePanel.addMouseMotionListener(this);
 
 		anglePanel.setLayout(null);
 		anglePanel.setPreferredSize(new Dimension(960, 540));
-		anglePanel.addMouseListener(this);
-		anglePanel.addMouseMotionListener(this);
 
 		thehelp.setLayout(null);
 		thehelp.setPreferredSize(new Dimension(960, 540));
@@ -205,6 +174,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		theabout.setLayout(null);
 		theabout.setPreferredSize(new Dimension(960, 540));
 
+		// angle angle side constructors
 		val1.setSize(350, 20);
 		val1.setLocation(570, 300);
 		val1.setVisible(true);
@@ -262,6 +232,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		sidePanel.add(enter);
 		sidePanel.add(outputSide);
 
+
+		// side side angle constructors
 		value1.setSize(350, 20);
 		value1.setLocation(570, 300);
 		value1.setVisible(true);
@@ -319,6 +291,7 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		anglePanel.add(enters);
 		anglePanel.add(outputAngle);
 		
+		// more menu constructors
 		theBar.add(mainMenu);
 		theBar.add(options);
 
@@ -332,8 +305,8 @@ public class graphics implements ActionListener, KeyListener, MouseListener, Mou
 		twoangle.addActionListener(this);
 		twoside.addActionListener(this);
 
+		// frame constructors
 		theFrame.setJMenuBar(theBar);
-		theFrame.addKeyListener(this);
 		theFrame.setContentPane(sidePanel);
 		theFrame.pack();
 		theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
