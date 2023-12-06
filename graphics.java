@@ -325,8 +325,6 @@ public class graphics implements ActionListener, ChangeListener{
 		calculate.setSize(150, 40);
 		calculate.setLocation(570, 475);
 		calculate.setBackground(Color.GREEN);
-		calculate.setOpaque(true);
-		calculate.setBorderPainted(false);
 		calculate.addActionListener(this);
 
 		enter.setFont(text);
@@ -386,8 +384,6 @@ public class graphics implements ActionListener, ChangeListener{
 		calculates.setSize(150, 40);
 		calculates.setLocation(570, 475);
 		calculates.setBackground(Color.GREEN);
-		calculates.setOpaque(true);
-		calculates.setBorderPainted(false);
 		calculates.addActionListener(this);
 
 		enters.setFont(text);

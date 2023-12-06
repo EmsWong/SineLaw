@@ -21,7 +21,7 @@ public class panel extends JPanel{
 		g.fillRect(0, 0, 960, 540);
         g.drawImage(imgEqu, 0, 0, null);
         if (drawable == true){
-            g.setColor(Color.BLACK);
+            g.setColor(Color.BLUE);
         }else{
             g.setColor(Color.WHITE);
         }
