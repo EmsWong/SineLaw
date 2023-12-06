@@ -51,11 +51,10 @@ public class graphics implements ActionListener, ChangeListener{
 	JLabel outputAngle = new JLabel ("Angle A is: ");
 	JButton calculates = new JButton("Calculate");
 	
-	//Methods
+	// Methods
 	public void setTextFont(Font theFont){
 		this.theArea.setFont(theFont); 
 	}
-	
 	
 	public void stateChanged(ChangeEvent e){
 		if (e.getSource() == val1){
@@ -70,12 +69,17 @@ public class graphics implements ActionListener, ChangeListener{
 			intb = val3.getValue();
 			angleA.setText("Angle A:  "+intA);
 			double dblA = Math.toRadians(intA);
+			
 			// using a method in tools to find the length of c
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
+			
+			// checks if triangle can be formed
 			if(intc < 0){
+				// triangle cannot be formed
 				sidePanel.drawable = false;
 				sidePanel.repaint();
 			}else{
+				// triangle can be formed
 				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
@@ -83,21 +87,27 @@ public class graphics implements ActionListener, ChangeListener{
 			}
 		}
 		if(e.getSource() == val3){
-			int intb;
-			intb = val3.getValue();
-			int intB;
-			intB = val2.getValue();
 			int intA;
+			int intB;
+			int intC
+			int intb;
+			int intc;
+			intb = val3.getValue();
+			intB = val2.getValue();
 			intA = val1.getValue();
-			int intC;
 			intC = 180 - intA - intB;
 			double dblA = Math.toRadians(intA);
-			int intc;
+
+			// using a method in tools to find length of c
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
+
+			// checks if a triangle can be formed
 			if(intc < 0){
+				// triangle cannot be formed
 				sidePanel.drawable = false;
 				sidePanel.repaint();
 			}else{
+				// triangle can be formed
 				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
