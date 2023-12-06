@@ -185,9 +185,9 @@ public class graphics implements ActionListener, ChangeListener{
 				System.out.println("Angle temp: "+temp);
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dbltemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dbltemp));
-				angleBB.setText("Angle B:  "+intB);
 				anglePanel.repaint();
 			}
+			angleBB.setText("Angle B:  "+intB);
 		}
 		
 	}
