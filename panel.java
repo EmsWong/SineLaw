@@ -20,7 +20,11 @@ public class panel extends JPanel{
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, 960, 540);
         g.drawImage(imgEqu, 0, 0, null);
-		g.setColor(Color.BLACK);
+        if (drawable == true){
+            g.setColor(Color.BLACK);
+        }else{
+            g.setColor(Color.WHITE);
+        }
 		Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(3));
         g2.drawLine(ax, ay, cx, cy);
