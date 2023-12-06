@@ -60,16 +60,16 @@ public class graphics implements ActionListener, ChangeListener{
 	public void stateChanged(ChangeEvent e){
 		if (e.getSource() == val1){
 			int intA;
-			intA = val1.getValue();
 			int intB;
-			intB = val2.getValue();
 			int intC;
-			intC = 180 - intA - intB;
 			int intb;
+			int intc
+			intA = val1.getValue();
+			intB = val2.getValue();
+			intC = 180 - intA - intB;
 			intb = val3.getValue();
 			angleA.setText("Angle A:  "+intA);
 			double dblA = Math.toRadians(intA);
-			int intc;
 			// using a method in tools to find the length of c
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
 			if(intc < 0){
