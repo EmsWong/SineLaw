@@ -18,20 +18,20 @@ public class panel extends JPanel{
 	int by = 425;
 
     public void paintComponent(Graphics g){
-	g.setColor(Color.WHITE);
-	g.fillRect(0, 0, 960, 540);
+	    g.setColor(Color.WHITE);
+	    g.fillRect(0, 0, 960, 540);
         g.drawImage(imgEqu, 0, 0, null);
         if (drawable == true){
             g.setColor(Color.BLUE);
         }else{
             g.setColor(Color.WHITE);
         }
-	Graphics2D g2 = (Graphics2D) g;
+	    Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(3));
         g2.drawLine(ax, ay, cx, cy);
-	g2.drawLine(ax, ay, bx, by);
-	g2.drawLine(bx, by, cx, cy);
-	g2.setStroke(new BasicStroke(1));
+	    g2.drawLine(ax, ay, bx, by);
+	    g2.drawLine(bx, by, cx, cy);
+	    g2.setStroke(new BasicStroke(1));
 	}
 
     //Constructor
