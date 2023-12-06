@@ -155,6 +155,7 @@ public class graphics implements ActionListener, ChangeListener{
 			anglePanel.cx = anglePanel.ax + intb;
 			anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dblTemp));
 			anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dblTemp));
+			sideBB.setText("Side B:  "+intb);
 			anglePanel.repaint();
 		}
 		if(e.getSource() == value3){
