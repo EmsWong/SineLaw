@@ -73,8 +73,10 @@ public class graphics implements ActionListener, ChangeListener{
 			// using a method in tools to find the length of c
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
 			if(intc < 0){
-					sidePanel.repaint();
+				sidePanel.drawable = false;
+				sidePanel.repaint();
 			}else{
+				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
 				sidePanel.repaint();
@@ -93,8 +95,10 @@ public class graphics implements ActionListener, ChangeListener{
 			int intc;
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
 			if(intc < 0){
-					sidePanel.repaint();
+				sidePanel.drawable = false;
+				sidePanel.repaint();
 			}else{
+				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
 				sidePanel.repaint();
@@ -116,8 +120,10 @@ public class graphics implements ActionListener, ChangeListener{
 			int intc;
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
 			if(intc < 0){
-					sidePanel.repaint();
+				sidePanel.drawable = false;
+				sidePanel.repaint();
 			}else{
+				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
 				sidePanel.repaint();
