@@ -7,6 +7,7 @@ import java.io.*;
 public class panel extends JPanel{
     //Properties
     BufferedImage imgEqu = null;
+    boolean drawable = true;
 	// coordinates based on starting triangle values
 	int ax = 180;
 	int ay = 470;
