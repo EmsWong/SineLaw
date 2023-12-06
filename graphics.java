@@ -144,6 +144,7 @@ public class graphics implements ActionListener, ChangeListener{
 				double dblTemp = Math.toRadians(intTemp);
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dblTemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dblTemp));
+				System.out.println(""+anglePanel.bx +anglePanel.by);
 				anglePanel.repaint();
 			}
 			sideAA.setText("Side A:  "+inta);
