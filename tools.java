@@ -66,6 +66,9 @@ public class tools {
         dblAngleA = Math.asin((dblSideA * Math.sin(dblAngleB))/dblSideB);
         dblAngleA = Math.toDegrees(dblAngleA);
         dblAngleA = Math.round(dblAngleA*100.0)/100.0;
+        System.out.println(intSideA);
+        System.out.println(intSideB);
+        System.out.println(intSideB);
         if((dblAngleA+dblAngleB)>= 180){
             // checking if triangle can be formed
             return 0;
