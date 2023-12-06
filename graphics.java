@@ -120,21 +120,28 @@ public class graphics implements ActionListener, ChangeListener{
 			sidePanel.repaint();
 		}
 		if(e.getSource() == val2){
-			int intB;
-			intB = val2.getValue();
-			int intb;
-			intb = val3.getValue();
 			int intA;
-			intA = val1.getValue();
+			int intB;
 			int intC;
+			int intb;
+			int intc;
+			intB = val2.getValue();
+			intb = val3.getValue();
+			intA = val1.getValue();
 			intC = 180 - intA - intB;
 			double dblA = Math.toRadians(intA);
-			int intc;
+
+			// using a method in tools to find length of c
 			intc = (int)Math.round(tools.sidecalc(intC, intB, intb));
+
+			// checks if a triangle can be formed
 			if(intc < 0){
+				// triangle cannot be formed
 				sidePanel.drawable = false;
 				sidePanel.repaint();
 			}else{
+				// triangle can be formed
+				// setting new end coordinates of side A
 				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
