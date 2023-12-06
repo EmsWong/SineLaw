@@ -169,7 +169,7 @@ public class graphics implements ActionListener, ChangeListener{
 			intA = (int)tools.anglecalc(inta, intb, intB);
 			int intC;
 			intC = 180 - intA - intB;
-			int temp = 180 - intC;
+			int temp = intB + intA;
 			double dbltemp = Math.toRadians(temp);
 			System.out.println("Angle a: "+intA);
 			System.out.println("Angle c: "+intC);
