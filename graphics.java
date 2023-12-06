@@ -63,7 +63,7 @@ public class graphics implements ActionListener, ChangeListener{
 			int intB;
 			int intC;
 			int intb;
-			int intc
+			int intc;
 			intA = val1.getValue();
 			intB = val2.getValue();
 			intC = 180 - intA - intB;
