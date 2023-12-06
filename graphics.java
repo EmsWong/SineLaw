@@ -134,7 +134,7 @@ public class graphics implements ActionListener, ChangeListener{
 			intB = value3.getValue();
 			int intA;
 			intA = (int)tools.anglecalc(inta, intb, intB);
-			if ((intA + intB) > 180){
+			if ((intA + intB) > 180 || intA == 0){
 				anglePanel.repaint();
 				anglePanel.drawable = false;
 				
@@ -144,9 +144,9 @@ public class graphics implements ActionListener, ChangeListener{
 				double dblTemp = Math.toRadians(intTemp);
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dblTemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dblTemp));
-				sideAA.setText("Side A:  "+inta);
 				anglePanel.repaint();
 			}
+			sideAA.setText("Side A:  "+inta);
 		}
 		if(e.getSource() == value2){
 			int intb;
@@ -157,7 +157,7 @@ public class graphics implements ActionListener, ChangeListener{
 			intB = value3.getValue();
 			int intA;
 			intA = (int)tools.anglecalc(inta, intb, intB);
-			if ((intA + intB) > 180){
+			if ((intA + intB) > 180 || intA == 0){
 				anglePanel.repaint();
 				anglePanel.drawable = false;
 			}else{
@@ -180,16 +180,18 @@ public class graphics implements ActionListener, ChangeListener{
 			intb = value2.getValue();
 			int intA;
 			intA = (int)tools.anglecalc(inta, intb, intB);
-			if ((intA + intB) > 180){
+			if ((intA + intB) > 180 || intA == 0){
 				anglePanel.repaint();
 				anglePanel.drawable = false;
 			}else{
 				anglePanel.drawable = true;
 				int temp = intB + intA;
 				double dbltemp = Math.toRadians(temp);
-				System.out.println("Angle a: "+intA);
-				//System.out.println("Angle c: "+intC);
+				System.out.println("Angle A: "+intA);
+				System.out.println("Angle B: "+intB);
+				System.out.println("Angle temp: "+dbltemp);
 				System.out.println("Angle temp: "+temp);
+				System.out.println("Side a: "+inta);
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dbltemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dbltemp));
 				anglePanel.repaint();
