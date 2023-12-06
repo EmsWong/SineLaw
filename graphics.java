@@ -152,24 +152,33 @@ public class graphics implements ActionListener, ChangeListener{
 		}
 		if(e.getSource() == value1){
 			int inta;
-			inta = value1.getValue();
 			int intb;
-			intb = value2.getValue();
 			int intB;
-			intB = value3.getValue();
 			int intA;
+			inta = value1.getValue();
+			intb = value2.getValue();
+			intB = value3.getValue();
+
+			// using a method in tools to find angle of A
 			intA = (int)tools.anglecalc(inta, intb, intB);
+
+			// checks if a triangle can be formed
 			if ((intA + intB) > 180 || intA == 0){
+				// triangle cannot be formed
 				anglePanel.repaint();
 				anglePanel.drawable = false;
 				
 			}else{
-				anglePanel.drawable = true;
+				// triangle can be formed
+				// setting new end coordinates of side c
+
+				// finds supplementary angle of angle C
 				int intTemp = intB + intA;
 				double dblTemp = Math.toRadians(intTemp);
+				
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dblTemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dblTemp));
-				System.out.println(""+anglePanel.bx +anglePanel.by);
+				anglePanel.drawable = true;
 				anglePanel.repaint();
 			}
 			sideAA.setText("Side A:  "+inta);
