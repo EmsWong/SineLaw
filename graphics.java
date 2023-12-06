@@ -80,9 +80,10 @@ public class graphics implements ActionListener, ChangeListener{
 				sidePanel.repaint();
 			}else{
 				// triangle can be formed
-				sidePanel.drawable = true;
+				// setting new end coordinates of side A
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
+				sidePanel.drawable = true;
 				sidePanel.repaint();
 			}
 		}
@@ -108,9 +109,10 @@ public class graphics implements ActionListener, ChangeListener{
 				sidePanel.repaint();
 			}else{
 				// triangle can be formed
-				sidePanel.drawable = true;
+				// setting new end coordinates of side A
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
+				sidePanel.drawable = true;
 				sidePanel.repaint();
 			}
 			sideB.setText("Side B:  "+intb);
