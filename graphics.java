@@ -245,7 +245,7 @@ public class graphics implements ActionListener, ChangeListener{
 			intvalue2 = value2.getValue();
 			intvalue3 = value3.getValue();
 			dblresult = tools.anglecalc(intvalue1, intvalue2, intvalue3);
-			if(dblresult == 0.0){
+			if(dblresult == 0.0 || (dblresult + intvalue3) > 180){
 				outputAngle.setText("Not a triangle");
 			}else{
 				outputAngle.setText("Angle A is: "+dblresult);
