@@ -3,29 +3,6 @@ import java.io.File;
 import java.io.FileInputStream;
 
 public class tools {
-    public static Font loadFont(String strFileName, int intSize){    
-        Font theFont = null;
-        try{
-            theFont = Font.createFont(Font.TRUETYPE_FONT, new File("Raleway-Bold.ttf")); 
-            return theFont.deriveFont(Font.PLAIN, intSize);
-        }catch(Exception e){
-        }
-        
-        try{
-            theFont = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(strFileName)); 
-            return theFont.deriveFont(Font.PLAIN, intSize);
-        }catch(Exception e){
-            System.out.println("Unable to load font file \""+strFileName+"\". Setting default font"); 
-        }
-        
-        try{
-            theFont = Font.createFont(Font.TRUETYPE_FONT, new File("Raleway-Bold.ttf")); 
-            return theFont.deriveFont(Font.PLAIN, 20);
-        }catch(Exception e){
-            System.out.println("Unable to load default font file \"Hack-Regular.tff\".  Will default to Java's native font for your OS");
-        }
-        return theFont;
-    }
 
     public static double sidecalc(int intAngleA, int intAngleB, int intSideB){
         // angle angle side calculations

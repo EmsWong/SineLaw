@@ -22,8 +22,7 @@ public class graphics implements ActionListener, ChangeListener{
 	JMenuItem about = new JMenuItem("About");
 	JMenuItem twoangle = new JMenuItem("Given 2 angles and a side");
 	JMenuItem twoside = new JMenuItem("Given 2 sides and an angle");
-	private TextArea theArea;
-	Font text = tools.loadFont("Raleway-Bold.ttf", 20);
+	Font text = null;
 
 	// sliders for angle angle side
 	JSlider val1 = new JSlider(0, 1, 180, 25);
@@ -52,10 +51,6 @@ public class graphics implements ActionListener, ChangeListener{
 	JButton calculates = new JButton("Calculate");
 	
 	// Methods
-	public void setTextFont(Font theFont){
-		this.theArea.setFont(theFont); 
-	}
-	
 	public void stateChanged(ChangeEvent e){
 		if (e.getSource() == val1){
 			int intA;
@@ -335,7 +330,7 @@ public class graphics implements ActionListener, ChangeListener{
 
 	//Constructor
 	public graphics(){
-
+		text = new Font("arial", Font.BOLD, 20);
 		// Menu constructors
 		sidePanel.setLayout(null);
 		sidePanel.setPreferredSize(new Dimension(960,540));
