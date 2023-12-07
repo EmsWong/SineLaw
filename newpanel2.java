@@ -8,6 +8,7 @@ public class newpanel2 extends JPanel{
     // Properties
     BufferedImage imgAbout = null;
 
+    // Methods
     public void paintComponent(Graphics g){
         g.drawImage(imgAbout, 0, 0, null);
     }
