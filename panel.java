@@ -46,7 +46,7 @@ public class panel extends JPanel{
 			try{
 				ImageIO.read(imageClass);
 			}catch (IOException e){
-                System.out.println("Unable to load image file");
+				System.out.println("Unable to load image file");
 			}
 		}
 		try{
