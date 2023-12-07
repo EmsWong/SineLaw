@@ -1,7 +1,3 @@
-import java.awt.Font;
-import java.io.File;
-import java.io.FileInputStream;
-
 public class tools {
 
     public static double sidecalc(int intAngleA, int intAngleB, int intSideB){
