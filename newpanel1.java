@@ -21,15 +21,17 @@ public class newpanel1 extends JPanel{
                         System.out.println("Unable to load image file");
                 }else{
                         try{
-                                ImageIO.read(imageClass);
+                                imgHelp = ImageIO.read(imageClass);
                         }catch (IOException e){
                                 System.out.println("Unable to load image file");
                         }
                 }
-                try{
-                        imgHelp = ImageIO.read(new File("help image.png"));
-                }catch(IOException e){
-                        System.out.println("Could not open image");
+                if(imgHelp == null){
+                        try{
+                                imgHelp = ImageIO.read(new File("help image.png"));
+                        }catch(IOException e){
+                                System.out.println("Could not open image");
+                        }
                 }
         }
 }
