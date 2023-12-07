@@ -301,8 +301,10 @@ public class graphics implements ActionListener, ChangeListener{
 
 			// checks if a triangle can be formed
 			if(dblresult == 0.0){
+				// triangle cannot be formed
 				outputSide.setText("Not a triangle");
 			}else{
+				// triangle can be formed
 				outputSide.setText("Side A is: "+dblresult);
 			}
 		}
@@ -321,8 +323,10 @@ public class graphics implements ActionListener, ChangeListener{
 
 			// checks if a triangle can be formed
 			if(dblresult == 0.0 || (dblresult + intvalue3) > 180){
+				// triangle cannot be formed
 				outputAngle.setText("Not a triangle");
 			}else{
+				// triangle can be formed
 				outputAngle.setText("Angle A is: "+dblresult);
 			}
 		}
