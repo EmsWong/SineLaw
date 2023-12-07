@@ -36,7 +36,7 @@ public class panel extends JPanel{
 		g2.setStroke(new BasicStroke(1));
 	}
 
-    //Constructor
+	//Constructor
 	public panel(){
 		InputStream imageClass = null;
 		imageClass = this.getClass().getResourceAsStream("formula image.png");
