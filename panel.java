@@ -44,15 +44,17 @@ public class panel extends JPanel{
 			System.out.println("Unable to load image file");
 		}else{
 			try{
-				ImageIO.read(imageClass);
+				imgEqu = ImageIO.read(imageClass);
 			}catch (IOException e){
 				System.out.println("Unable to load image file");
 			}
 		}
-		try{
-			imgEqu = ImageIO.read(new File("formula image.png"));
-		}catch(IOException e){
-			System.out.println("Could not open image");
+		if(imgEqu == null){
+			try{
+				imgEqu = ImageIO.read(new File("formula image.png"));
+			}catch(IOException e){
+				System.out.println("Could not open image");
+			}
 		}
 	}
 }
