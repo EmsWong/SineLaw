@@ -90,7 +90,7 @@ public class graphics implements ActionListener, ChangeListener{
 		if(e.getSource() == val3){
 			int intA;
 			int intB;
-			int intC
+			int intC;
 			int intb;
 			int intc;
 			intb = val3.getValue();
@@ -142,9 +142,9 @@ public class graphics implements ActionListener, ChangeListener{
 			}else{
 				// triangle can be formed
 				// setting new end coordinates of side A
-				sidePanel.drawable = true;
 				sidePanel.bx = sidePanel.ax + (int)Math.round(intc*Math.cos(dblA));
 				sidePanel.by = sidePanel.ay - (int)Math.round(intc*Math.sin(dblA));
+				sidePanel.drawable = true;
 				sidePanel.repaint();
 			}
 			angleB.setText("Angle B:  "+intB);
@@ -176,6 +176,7 @@ public class graphics implements ActionListener, ChangeListener{
 				int intTemp = intB + intA;
 				double dblTemp = Math.toRadians(intTemp);
 				
+				// setting new end coordinates of side A
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dblTemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dblTemp));
 				anglePanel.drawable = true;
@@ -185,50 +186,67 @@ public class graphics implements ActionListener, ChangeListener{
 		}
 		if(e.getSource() == value2){
 			int intb;
-			intb = value2.getValue();
 			int inta;
-			inta = value1.getValue();
 			int intB;
-			intB = value3.getValue();
 			int intA;
+			intb = value2.getValue();
+			inta = value1.getValue();
+			intB = value3.getValue();
+
+			// using a method in tools to find angle of A
 			intA = (int)tools.anglecalc(inta, intb, intB);
+
+			// checks if a triangle can be formed
 			if ((intA + intB) > 180 || intA == 0){
+				// triangle cannot be formed
 				anglePanel.repaint();
 				anglePanel.drawable = false;
 			}else{
-				anglePanel.drawable = true;
+				// triangle can be formed
+				// setting new end coordinates of side c
+
+				// finds supplementary angle of angle C
 				int intTemp = intB + intA;
 				double dblTemp = Math.toRadians(intTemp);
+
+				// setting new end and starting coordinates of side A
 				anglePanel.cx = anglePanel.ax + intb;
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dblTemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dblTemp));
+				anglePanel.drawable = true;
 				anglePanel.repaint();
 			}
 			sideBB.setText("Side B:  "+intb);
 		}
 		if(e.getSource() == value3){
 			int intB;
-			intB = value3.getValue();
 			int inta;
-			inta = value1.getValue();
 			int intb;
-			intb = value2.getValue();
 			int intA;
+			intB = value3.getValue();
+			inta = value1.getValue();
+			intb = value2.getValue();
+
+			// using a method in tools to find angle of A
 			intA = (int)tools.anglecalc(inta, intb, intB);
+
+			// checks if a triangle can be formed
 			if ((intA + intB) > 180 || intA == 0){
+				// triangle cannot be formed
 				anglePanel.repaint();
 				anglePanel.drawable = false;
 			}else{
-				anglePanel.drawable = true;
+				// triangle can be formed
+				// setting new end coordinates of side c
+
+				// finds supplementary angle of angle C
 				int temp = intB + intA;
 				double dbltemp = Math.toRadians(temp);
-				System.out.println("Angle A: "+intA);
-				System.out.println("Angle B: "+intB);
-				System.out.println("Angle temp: "+dbltemp);
-				System.out.println("Angle temp: "+temp);
-				System.out.println("Side a: "+inta);
+
+				// setting new end coordinates of side A
 				anglePanel.bx = anglePanel.cx + (int)Math.round(inta * Math.cos(dbltemp));
 				anglePanel.by = anglePanel.cy - (int)Math.round(inta * Math.sin(dbltemp));
+				anglePanel.drawable = true;
 				anglePanel.repaint();
 			}
 			angleBB.setText("Angle B:  "+intB);
@@ -241,30 +259,35 @@ public class graphics implements ActionListener, ChangeListener{
 		
 		}
 		if(e.getSource() == help){
+			// help option was pressed
 			System.out.println("help");
 			theFrame.setContentPane(thehelp);
 			theFrame.pack();
 			theFrame.repaint();
 		}
 		if(e.getSource() == about){
+			// about option was pressed
 			System.out.println("about");
 			theFrame.setContentPane(theabout);
 			theFrame.pack();
 			theFrame.repaint();
 		}
 		if(e.getSource() == twoside){
+			// given two sides one angle option was pressed
 			System.out.println("given two sides and angle");
 			theFrame.setContentPane(anglePanel);
 			theFrame.pack();
 			theFrame.repaint();
 		}
 		if(e.getSource() == twoangle){
+			// given two angles one side option was pressed
 			System.out.println("given two angle and side");
 			theFrame.setContentPane(sidePanel);
 			theFrame.pack();
 			theFrame.repaint();
 		}
 		if(e.getSource() == calculate){
+			// calculate button on the sidePanel was pressed
 			int intval1;
 			int intval2;
 			int intval3;
@@ -272,15 +295,19 @@ public class graphics implements ActionListener, ChangeListener{
 			intval1 = val1.getValue();
 			intval2 = val2.getValue();
 			intval3 = val3.getValue();
+
+			// using a method in tools to find length of side A
 			dblresult = tools.sidecalc(intval1, intval2, intval3);
+
+			// checks if a triangle can be formed
 			if(dblresult == 0.0){
 				outputSide.setText("Not a triangle");
 			}else{
 				outputSide.setText("Side A is: "+dblresult);
 			}
-			System.out.println(dblresult);
 		}
 		if(e.getSource() == calculates){
+			// calculate button on anglePanel was pressed
 			int intvalue1;
 			int intvalue2;
 			int intvalue3;
@@ -288,13 +315,16 @@ public class graphics implements ActionListener, ChangeListener{
 			intvalue1 = value1.getValue();
 			intvalue2 = value2.getValue();
 			intvalue3 = value3.getValue();
+
+			// using a method in tools to find length of side A
 			dblresult = tools.anglecalc(intvalue1, intvalue2, intvalue3);
+
+			// checks if a triangle can be formed
 			if(dblresult == 0.0 || (dblresult + intvalue3) > 180){
 				outputAngle.setText("Not a triangle");
 			}else{
 				outputAngle.setText("Angle A is: "+dblresult);
 			}
-			System.out.println(dblresult);
 		}
 	}
 
